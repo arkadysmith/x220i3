@@ -23,10 +23,9 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id ~/.config/i3/autostart.sh
 exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 exec --no-startup-id picom
-exec --no-startup-id sxhkd
+exec --no-startup-id sxhkd -c ~/.config/i3/sxhkdrc
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -203,10 +202,10 @@ bar {
 
 #for_window [class="^.*"] border pixel 1
 for_window [class="^.*"] title_format " "
-default_border pixel 3
+default_border pixel 2
 default_floating_border pixel 1
 hide_edge_borders smart
-gaps inner 6
+gaps inner 4
 gaps outer 2
 smart_gaps on
 
@@ -217,7 +216,7 @@ client.focused_inactive #4fc3f7 #4fc3f7 #4fc3f7 #4fc3f7
 
 
 #set floating window size
-for_window [floating] resize set 1024 768
+for_window [floating] resize set 320 240
 for_window [floating] move position center
 
 
@@ -225,7 +224,7 @@ for_window [class="qimgv"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="mpv"] floating enable, sticky enable
 for_window [class="Lxappearance"] floating enable
-for_window [class="kitty"] floating enable, sticky enable
+for_window [class="vlc"] floating enable, sticky enable
 for_window [class="Galculator"] floating enable, sticky enable
 
 # assigments
